@@ -1,0 +1,86 @@
+.app-content .jumbotron {
+  background-color: white;
+  text-align: center;
+}
+
+.survey-options {
+  text-align: initial;
+  position: relative;
+  left: 0.5px;
+}
+
+.survey-listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+.survey-options input[type="radio"] {
+  margin-right: 5px;
+}
+
+.survey-options .number-of-votes {
+  float: right;
+}
+
+.error-message {
+  font-weight: bold;
+  color: red;
+  margin-top: 5px;
+}
+
+.scrollable-option-list .error-message {
+  margin-left: 20px;
+}
+
+.header-menu {
+  min-height: 50px;
+  margin-bottom: 20px;
+}
+
+.header-menu .nav.navbar-nav li:first-child a {
+  padding-left: 0;
+}
+
+.app-content {
+  margin-top: 35px;
+}
+
+h2 {
+  margin-top: 0 !important;
+  margin-bottom: 25px !important;
+}
+
+header {
+  /*text-align: center;*/
+}
+
+footer {
+  margin-top: 40px;
+  /*text-align: center;*/
+}
+
+#create-survey {
+  width: 100%;
+}
+
+#add-option {
+  margin-bottom: 10px;
+}
+
+.option-container {
+  width: 70%;
+}
+
+.option-container .remove-field {
+  float: right;
+  margin-top: 31px;
+  font-weight: bold;
+}
+
+.option-container .input-container {
+  width: 92%;
+}
+
+.main-fields {
+  padding-left: 0 !important;
+}
