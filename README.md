@@ -11,7 +11,7 @@ cd redis-stable
 make
 sudo make install
 ```
-After installation ends, open a new terminal and star the server by typing 'redis-server'
+After installation ends, open a new terminal and start the server by typing 'redis-server'
 
 # NPM installation
 ```shell
@@ -26,7 +26,7 @@ nvm alias default 6.8
 ```
 
 # Usage
-After installing everything just cd into the project's folder and start install the modules by typing:
+After installing everything just cd into the project's folder and start installing the modules by typing:
 ```shell
 npm install
 ```
