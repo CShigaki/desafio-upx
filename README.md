@@ -34,3 +34,4 @@ After installing everything just cd into the project's folder and start it by ty
 npm start
 ```
 After running the command you can access the app by accessing http://localhost:3000/ in your browser.
+If you wish to perform simple automated tests in the API, I've included some postman test files in the root of the project.
