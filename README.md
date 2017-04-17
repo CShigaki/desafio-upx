@@ -1,6 +1,3 @@
-# Desafio UPX
-# Setup
-
 # Requirements
 - Redis
 - NPM
