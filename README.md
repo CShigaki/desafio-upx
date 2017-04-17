@@ -1,6 +1,3 @@
-# Desafio UPX
-# Setup
-
 # Requirements
 - Redis
 - NPM
@@ -29,7 +26,11 @@ nvm alias default 6.8
 ```
 
 # Usage
-After installing everything just cd into the project's folder and start it by typing:
+After installing everything just cd into the project's folder and start install the modules by typing:
+```shell
+npm install
+```
+After installing all the modules you can start the app by typing:
 ```shell
 npm start
 ```
