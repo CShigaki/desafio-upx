@@ -1,0 +1,151 @@
+{
+	"variables": [],
+	"info": {
+		"name": "UPX Tests",
+		"_postman_id": "ade31a6b-5cf5-de9b-5949-2d8bc8dac9d5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UPX Test Requests",
+			"description": "",
+			"item": [
+				{
+					"name": "Save API Error",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Check survey with WRONG content\"] = jsonData.success === false;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:3000/api/v1/save/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\"question\":\"Postman Automated Test Error\",\"description\":\"\",\"choices\":[{\"choice\":\"1\"},{\"choice\":\"2\"},{\"choice\":\"3\"},{\"choice\":\"4\"},{\"choice\":\"5\"}]}]"
+						},
+						"description": "Tries to save a survey in the database with one field wrong."
+					},
+					"response": []
+				},
+				{
+					"name": "Save API No Error",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Check survey with RIGHT content\"] = jsonData.success === true;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:3000/api/v1/save/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\"question\":\"Postman Automated Test No Error\",\"description\":\"Postman Automated Test\",\"choices\":[{\"choice\":\"1\"},{\"choice\":\"2\"},{\"choice\":\"3\"},{\"choice\":\"4\"},{\"choice\":\"5\"}]}]"
+						},
+						"description": "Save a survey in the database with all fields correct."
+					},
+					"response": []
+				},
+				{
+					"name": "Listing API",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"var jsonData = JSON.parse(responseBody);",
+									"jsonData = jsonData.pop();",
+									"var question = jsonData.question;",
+									"",
+									"tests[\"Listing API\"] = question === \"Postman Automated Test No Error\"",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:3000/api/v1/list/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\"question\":\"Postman Automated Test No Error\",\"description\":\"Postman Automated Test\",\"choices\":[{\"choice\":\"1\"},{\"choice\":\"2\"},{\"choice\":\"3\"},{\"choice\":\"4\"},{\"choice\":\"5\"}]}]"
+						},
+						"description": "Checks if the content insert really is in the database and check the listing API in the proccess."
+					},
+					"response": []
+				},
+				{
+					"name": "Content Deletion",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Check content deletion\"] = jsonData.success === true;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://localhost:3000/api/v1/deletetest/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\"question\":\"Postman Automated Test No Error\",\"description\":\"Postman Automated Test\",\"choices\":[{\"choice\":\"1\"},{\"choice\":\"2\"},{\"choice\":\"3\"},{\"choice\":\"4\"},{\"choice\":\"5\"}]}]"
+						},
+						"description": "Deletes the test content inserted in the database."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
