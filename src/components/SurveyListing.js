@@ -17,6 +17,7 @@ export default class SurveyListing extends React.Component {
       return response.json().then(function(json) {
         // Read the response as directly as JSON (since we know the api will ALWAYS return JSON).
         // Sets the state according to the returned JSON.
+        console.log(json);
         if (json.errorMessage != undefined)
           self.setState({ surveys: {}, errorMessage: json.errorMessage })
         else
@@ -38,7 +39,7 @@ export default class SurveyListing extends React.Component {
       // Render the survey links added to the array.
       <div className="survey-listing-container">
         <h2>Available Surveys</h2>
-        {links.length != 0 ? <ul className="survey-listing">{links}</ul> : <p>{this.state.errorMessage ? this.state.errorMessage : 'Loading surveys...'}</p>}
+        {links.length != 0 ? <ul className="survey-listing">{links}</ul> : <p>{this.state.errorMessage != undefined ? this.state.errorMessage : 'Loading surveys...'}</p>}
       </div>
     );
   }

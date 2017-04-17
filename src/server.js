@@ -107,7 +107,8 @@ app.get('/api/v1/get/:id', function(req, res) {
 // List all the surveys.
 app.get('/api/v1/list/', function(req, res) {
   client.get('questions', function(err, reply) {
-    if (reply == null) {
+    var parsedJSON = JSON.parse(reply);
+    if (reply == null || parsedJSON.length == 0) {
       // If there are no questions stored or there is no question with the supplied ID.
       res.end(JSON.stringify({
         "errorMessage": "There are no surveys created at the moment.",
@@ -171,7 +172,7 @@ app.post('/api/v1/save/', function(req, res) {
   // First of all, we add the value and the number of votes to the choices array.
   for (var key in body.choices) {
     // But we check for empty values in case the user used chrome inspector to remove the HTML5 validation.
-    if (body.choices[key].choice.trim().length == 0) {
+    if (body.choices[key].trim().length == 0) {
       error = true;
       break;
     }

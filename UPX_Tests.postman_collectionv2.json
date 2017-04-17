@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "UPX Tests",
-		"_postman_id": "ade31a6b-5cf5-de9b-5949-2d8bc8dac9d5",
+		"_postman_id": "5356894f-6403-9807-ee49-7e71885098e2",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -37,7 +37,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "[{\"question\":\"Postman Automated Test Error\",\"description\":\"\",\"choices\":[{\"choice\":\"1\"},{\"choice\":\"2\"},{\"choice\":\"3\"},{\"choice\":\"4\"},{\"choice\":\"5\"}]}]"
+							"raw": "[{\"question\":\"Postman Automated Test No Error\",\"description\":\"\",\"choices\":[\"1\",\"2\",\"3\",\"4\",\"5\"]}]"
 						},
 						"description": "Tries to save a survey in the database with one field wrong."
 					},
@@ -69,7 +69,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "[{\"question\":\"Postman Automated Test No Error\",\"description\":\"Postman Automated Test\",\"choices\":[{\"choice\":\"1\"},{\"choice\":\"2\"},{\"choice\":\"3\"},{\"choice\":\"4\"},{\"choice\":\"5\"}]}]"
+							"raw": "[{\"question\":\"Postman Automated Test No Error\",\"description\":\"Postman Automated Test\",\"choices\":[\"1\",\"2\",\"3\",\"4\",\"5\"]}]"
 						},
 						"description": "Save a survey in the database with all fields correct."
 					},
